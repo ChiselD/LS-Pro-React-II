@@ -22,9 +22,9 @@ export default class Clock extends Component {
     });
   }
 
-  // changeTime() {
-  //   setInterval(updateTime, 1000);
-  // }
+  changeTime() {
+    setInterval(this.updateTime, 1000);
+  }
 
   render() {
     return (
