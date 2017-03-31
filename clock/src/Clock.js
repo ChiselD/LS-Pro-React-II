@@ -5,8 +5,8 @@ export default class Clock extends Component {
 
   constructor(props) {
     super(props);
-    this.incrementTime = this.incrementTime.bind(this);
-    const now = new Date();
+    this.updateTime = this.updateTime.bind(this);
+    let now = new Date();
     this.state = {
       hr: now.getHours(),
       mn: now.getMinutes(),
@@ -14,15 +14,17 @@ export default class Clock extends Component {
     };
   }
 
-  incrementTime() {
+  updateTime() {
     this.setState({
-      now: new Date()
+      hr: this.now.getHours(),
+      mn: this.now.getMinutes(),
+      sc: this.now.getSeconds()
     });
   }
 
-  changeTime() {
-    setInterval(this.incrementTime, 1000);
-  }
+  // changeTime() {
+  //   setInterval(updateTime, 1000);
+  // }
 
   render() {
     return (
